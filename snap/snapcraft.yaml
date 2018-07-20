@@ -14,6 +14,8 @@ parts:
     plugin: make
     source: ./scanner
     after: [binutils]
+    build-packages:
+      - zlib1g-dev
     artifacts: [x86_64-scanner]
 
   binutils:
