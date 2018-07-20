@@ -1,0 +1,21 @@
+name: spectrev1-scanner
+version: "0.1"
+summary: Spectre Variant 1 Scanner
+description: Detect potential Spectre Variant 1 vulnerabilities in static binaries.
+grade: devel
+confinement: devmode
+
+apps:
+  spectrev1-scanner:
+    command: x86_64-scanner
+
+parts:
+  scanner:
+    plugin: make
+    source: ./scanner
+    after: [binutils]
+    artifacts: [x86_64-scanner]
+
+  binutils:
+    plugin: autotools
+    source: ./binutils-2.31
