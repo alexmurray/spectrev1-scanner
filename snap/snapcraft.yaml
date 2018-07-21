@@ -22,4 +22,4 @@ parts:
     plugin: autotools
     source: ./binutils-2.31
     prime:
-      - include
+      - -*
